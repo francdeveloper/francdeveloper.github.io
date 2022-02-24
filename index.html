@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVF - Prueba Técnica</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body ng-app="app" ng-controller="ctrl">
+    <div class="container">
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h2>Prueba Técnica: Estadísticas Covid-19</h2>
+
+            </div>
+        </div>
+        <br>
+        <form action="" ng-submit="submit($event)">
+            <div class="card">
+                <div class="card-header">Filtros</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label for="">Tipo:</label>
+                                <select name="" id="" class="form-control" ng-model="filtro.status" ng-options="item as item.label for item in model.tipos track by item.id">
+                                <option value="">-Seleccione-</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label for="">País:</label>
+                                <select name="" id="" class="form-control" ng-model="filtro.pais" ng-options="item as item.country for item in model.paises track by item.iso">
+                                <option value="">-Seleccione-</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <button class="btn btn-primary {{is_loading?'btl-loading':''}}" type="submit" ng-disabled="id_loading">Generar</button>
+                </div>
+            </div>
+            <hr>
+            <div class="alert alert-danger" role="alert" ng-show="error_data">
+                No se pudo generar la información
+            </div>
+            <div id="char-area" style="height: 300px; overflow: hidden;" ng-show="!is_loading && !error_data">
+
+            </div>
+        </form>
+    </div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/logic.js"></script>
+</body>
+
+</html>

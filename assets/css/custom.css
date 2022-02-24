@@ -1,0 +1,7 @@
+.btl-loading {
+    color: transparent !important;
+    background-image: url('../images/loader-white.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
